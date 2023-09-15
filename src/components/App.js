@@ -1,18 +1,16 @@
+//styles
 import '../styles/App.scss';
+//components
+import Navbar from "./Sidebar/Navbar";
+import Project from './Project/Project';
 import React, { useState } from 'react';
-import Navbar from './Sidebar/Navbar';
 import { BrowserRouter as Routes, Switch, Route } from 'react-router-dom';
 
 function App() {
   const [sidebar, setSidebar] = useState(false);
   return (
-    <Routes>
-      <Route
-        path="/Navbar"
-        element={<Navbar sidebar={sidebar} setSidebar={setSidebar} />}
-      />
-    </Routes>
-  );
+    <Project/>
+  )
 }
 
 export default App;
