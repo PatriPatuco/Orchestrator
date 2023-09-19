@@ -1,45 +1,72 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import { IconContext } from 'react-icons';
 import * as AiIcons from 'react-icons/ai';
-
-// import * as HiIcons from 'react-icons/hi';
-// import * as RiIcons from 'react-icons/ri';
-// import * as GrIcons from 'react-icons/gr';
 import * as FaIcons from 'react-icons/fa';
+import * as MdIcons from 'react-icons/md';
 
-const Navbar = ({ sidebar, setSidebar }) => {
-  const showSideBar = () => setSidebar(sidebar);
+const Navbar = ({ tasks }) => {
+  const [sidebar, setSidebar] = useState(false);
+  const [taskList, setTaskList] = useState(true);
+  const showSideBar = () => setSidebar(!sidebar);
+
+  const showTaskList = () => setTaskList(!taskList);
 
   return (
     <>
-      <IconContext.Provider>
-        <div className="Navbar">
-          <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSideBar} />
+      <div className="sidebar active">
+        <h1 className="sidebar__logo">Orchestrator</h1>
+        <div className="sidebar__navbar">
+          <Link to="#" className="sidebar__navbar--menu-bars">
+            <MdIcons.MdOutlineKeyboardDoubleArrowLeft onClick={showSideBar} />
           </Link>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className="nav-menu-items" onClick={showSideBar}>
-            <li className="navbar-toggle">
-              <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose />
-              </Link>
+        <nav
+          className={
+            sidebar ? 'sidebar__nav--menu active' : 'sidebar__nav--menu'
+          }
+        >
+          <ul className="sidebar__nav--menu--items">
+            <li className="sidebar__nav--menu--items--toggle">
+              List of Tasks
+              <span className="navbar__menu--bars">
+                <Link to="#">
+                  <MdIcons.MdOutlineKeyboardDoubleArrowLeft
+                    onClick={showSideBar}
+                  />
+                </Link>
+              </span>
             </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path} />
-                  <span>{item.title}</span>
-                </li>
-              );
-            })}
+            <li>
+              <span className="navbar__menu--bars">
+                <Link to="#">
+                  <MdIcons.MdOutlineKeyboardArrowDown onClick={showTaskList} />
+                </Link>
+              </span>
+            </li>
+            {taskList &&
+              tasks.map((item, index) => {
+                return (
+                  <li key={index} className="nav__menu--items--tasks">
+                    {item.title}
+                    {tasks.l}
+                  </li>
+                );
+              })}
           </ul>
         </nav>
-      </IconContext.Provider>
+      </div>
     </>
   );
 };
 
 export default Navbar;
+
+//  return (
+//    <>
+//      <div className="Navbar">
+//        <Link to="#" className="menu-bar">
+//          <FaIcons.FaBars />
+//        </Link>
+//      </div>
+//    </>
+//  );

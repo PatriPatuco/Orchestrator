@@ -1,17 +1,21 @@
 import '../styles/App.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Sidebar/Navbar';
-import { BrowserRouter as Routes, Switch, Route } from 'react-router-dom';
+import Project from './Project/Project';
+import { Routes, Route } from 'react-router-dom';
+import taskData from '../services/taskData.json';
 
 function App() {
-  const [sidebar, setSidebar] = useState(false);
+  // const [sidebar, setSidebar] = useState(false);
+
+  const [tasks, setTasks] = useState(taskData);
+
   return (
-    <Routes>
-      <Route
-        path="/Navbar"
-        element={<Navbar sidebar={sidebar} setSidebar={setSidebar} />}
-      />
-    </Routes>
+    <>
+      <Navbar tasks={tasks} setTasks={setTasks} />
+      <Project />
+      <Routes></Routes>
+    </>
   );
 }
 
