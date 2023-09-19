@@ -1,5 +1,5 @@
 //styles
-import '../styles/App.scss';
+import '../styles/__app.scss';
 import taskData from "../services/taskData.json";
 //components
 import Project from './Project/Project';

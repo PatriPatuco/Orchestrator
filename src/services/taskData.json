@@ -1,7 +1,43 @@
 [
   {
-    "project-id": 1,
-    "project-title": "Project 01",
+    "projectId": 1,
+    "projectTitle": "Project 01",
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Task 1",
+        "status": "TODO",
+        "desc": "Lorem Ipsum",
+        "subtasck": {
+          "id": 1,
+          "def": "Lorem Ipsum"
+        }
+      },
+      {
+        "id": 2,
+        "title": "Task 2",
+        "status": "DOING",
+        "desc": "Lorem Ipsum",
+        "substack": {
+          "id": 1,
+          "def": "Lorem Ipsum"
+        }
+      },
+      {
+        "id": 3,
+        "title": "Task 3",
+        "status": "DONE",
+        "desc": "Lorem Ipsum",
+        "substack": {
+          "id": 1,
+          "def": "Lorem Ipsum"
+        }
+      }
+    ]
+  },
+  {
+    "projectId": 2,
+    "projectTitle": "Project 02",
     "tasks": [
       {
         "id": 1,
@@ -36,44 +72,8 @@
     ]
   },
   {
-    "project-id": 2,
-    "project-title": "Project 02",
-    "tasks": [
-      {
-        "id": 1,
-        "title": "Task 1",
-        "status": "TODO",
-        "desc": "Lorem Ipsum",
-        "substack": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      },
-      {
-        "id": 2,
-        "title": "Task 2",
-        "status": "DOING",
-        "desc": "Lorem Ipsum",
-        "substack": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      },
-      {
-        "id": 3,
-        "title": "Task 3",
-        "status": "DONE",
-        "desc": "Lorem Ipsum",
-        "substack": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      }
-    ]
-  },
-  {
-    "project-id": 3,
-    "project-title": "Project 03",
+    "projectId": 3,
+    "projectTitle": "Project 03",
     "tasks": [
       {
         "id": 1,

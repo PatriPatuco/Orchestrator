@@ -1,0 +1,50 @@
+@import "./core/variables";
+
+.project {
+    background-color: $mid-white;
+    font-family: $regular;
+    padding: 4rem;
+
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 800;
+        width: 100%;
+    }
+
+    &__status {
+        padding-top: 4rem;
+        display: flex;
+        gap:  5.6rem;
+
+        &--title {
+            font-size: 2rem;
+            font-weight: 700;
+            width: 18rem;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 0.2rem $light-blue solid;
+
+            span{
+                color: $blue;
+            }
+        }
+
+        &--task {
+            background-color: $white;
+            border-radius: 0.9rem;
+            border: 0.1rem solid $light-blue;
+            padding: 2.5rem;
+
+            &--title {
+                font-weight: 600;
+                font-size: 1.6rem;
+                padding-bottom: 1rem;
+            }
+
+            &--subtask {
+                font-size: 1.2rem;
+                color: $greyish-blue;
+            }
+        }
+    }
+}
