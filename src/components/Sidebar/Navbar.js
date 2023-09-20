@@ -1,72 +1,57 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import * as AiIcons from 'react-icons/ai';
-import * as FaIcons from 'react-icons/fa';
 import * as MdIcons from 'react-icons/md';
+import Project from '../Project/Project';
 
-const Navbar = ({ tasks }) => {
+const Navbar = ({ projects }) => {
   const [sidebar, setSidebar] = useState(false);
   const [taskList, setTaskList] = useState(true);
   const showSideBar = () => setSidebar(!sidebar);
-
   const showTaskList = () => setTaskList(!taskList);
 
   return (
     <>
-      <div className="sidebar active">
-        <h1 className="sidebar__logo">Orchestrator</h1>
-        <div className="sidebar__navbar">
-          <Link to="#" className="sidebar__navbar--menu-bars">
-            <MdIcons.MdOutlineKeyboardDoubleArrowLeft onClick={showSideBar} />
-          </Link>
-        </div>
-        <nav
-          className={
-            sidebar ? 'sidebar__nav--menu active' : 'sidebar__nav--menu'
-          }
-        >
-          <ul className="sidebar__nav--menu--items">
-            <li className="sidebar__nav--menu--items--toggle">
-              List of Tasks
-              <span className="navbar__menu--bars">
-                <Link to="#">
-                  <MdIcons.MdOutlineKeyboardDoubleArrowLeft
-                    onClick={showSideBar}
-                  />
-                </Link>
-              </span>
-            </li>
-            <li>
-              <span className="navbar__menu--bars">
-                <Link to="#">
-                  <MdIcons.MdOutlineKeyboardArrowDown onClick={showTaskList} />
-                </Link>
-              </span>
-            </li>
+      <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+        <h2 className="sidebar__h2">
+          <Link to="/">Orchestrator</Link>
+          <span>
+            <Link
+              to="#"
+              className={
+                sidebar ? 'sidebar__h3--span active' : 'sidebar__h3--span'
+              }
+            >
+              <MdIcons.MdOutlineKeyboardDoubleArrowRight
+                onClick={showSideBar}
+              />
+            </Link>
+          </span>
+        </h2>
+        <h3 className="sidebar__h3">List of Tasks ({projects.length})</h3>
+        <nav className="sidebar__nav">
+          <ul className="sidebar__nav--ulp">
+            <span>
+              <Link to="#">
+                <MdIcons.MdOutlineKeyboardArrowDown onClick={showTaskList} />
+              </Link>
+            </span>
+            <li className="sidebar__nav--ulp--l"></li>
             {taskList &&
-              tasks.map((item, index) => {
+              projects.map((item, index) => {
                 return (
-                  <li key={index} className="nav__menu--items--tasks">
+                  <li key={index} className="sidebar__nav--ulp--l">
                     {item.title}
-                    {tasks.l}
                   </li>
                 );
               })}
           </ul>
         </nav>
+        <button classsName="sidebar__button">
+          <Link to="/Project">add new project</Link>
+        </button>
       </div>
     </>
   );
 };
 
 export default Navbar;
-
-//  return (
-//    <>
-//      <div className="Navbar">
-//        <Link to="#" className="menu-bar">
-//          <FaIcons.FaBars />
-//        </Link>
-//      </div>
-//    </>
-//  );

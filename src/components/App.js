@@ -8,13 +8,14 @@ import taskData from '../services/taskData.json';
 function App() {
   // const [sidebar, setSidebar] = useState(false);
 
-  const [tasks, setTasks] = useState(taskData);
+  const [projects, setProjects] = useState(taskData);
 
   return (
     <>
-      <Navbar tasks={tasks} setTasks={setTasks} />
-      <Project />
-      <Routes></Routes>
+      <Navbar projects={projects} setProjects={setProjects} />
+      <Routes>
+        <Route path="/Project" element={<Project />} />
+      </Routes>
     </>
   );
 }
