@@ -1,18 +1,11 @@
-import '../styles/App.scss';
-import React, { useState } from 'react';
-import Navbar from './Sidebar/Navbar';
-import { BrowserRouter as Routes, Switch, Route } from 'react-router-dom';
+//styles
+import '../styles/__app.scss';
+import taskData from "../services/taskData.json";
+//components
+import Project from './Project/Project';
 
 function App() {
-  const [sidebar, setSidebar] = useState(false);
-  return (
-    <Routes>
-      <Route
-        path="/Navbar"
-        element={<Navbar sidebar={sidebar} setSidebar={setSidebar} />}
-      />
-    </Routes>
-  );
+  return <Project taskData={taskData} />;
 }
 
 export default App;
