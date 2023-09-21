@@ -4,6 +4,11 @@ import Navbar from './Sidebar/Navbar';
 import Project from './Project/Project';
 import { Routes, Route } from 'react-router-dom';
 import taskData from '../services/taskData.json';
+import ProjectDetail from '../pages/ProjectDetail';
+import Home from '../pages/Home';
+import Header from './Header/header';
+import Options from './Header/Options';
+import ViewOptions from './Header/ViewOptions';
 
 function App() {
   // const [sidebar, setSidebar] = useState(false);
@@ -14,7 +19,8 @@ function App() {
     <>
       <Navbar projects={projects} setProjects={setProjects} />
       <Routes>
-        <Route path="/Project" element={<Project />} />
+        <Route path="/">home</Route>
+        <Route path="/Project/id">Proyecto/id</Route>
       </Routes>
     </>
   );
