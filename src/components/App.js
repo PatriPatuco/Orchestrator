@@ -13,7 +13,8 @@ import ViewOptions from './Header/ViewOptions';
 function App() {
   // const [sidebar, setSidebar] = useState(false);
 
-  const [projects, setProjects] = useState(taskData);
+  const fakedata = [];
+  const [projects, setProjects] = useState(fakedata);
   const [newProject, setNewProject] = useState({
     projectTitle: 'New Project',
     tasks: [

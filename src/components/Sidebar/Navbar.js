@@ -27,7 +27,9 @@ const Navbar = ({ projects }) => {
             </Link>
           </span>
         </h2>
-        <h3 className="sidebar__h3">List of Tasks ({projects.length})</h3>
+        <h3 className="sidebar__h3">
+          List of Tasks {projects.length > 0 ? '(' + projects.length + ')' : ''}
+        </h3>
         <nav className="sidebar__nav">
           <ul className="sidebar__nav--ulp">
             <span>
@@ -36,15 +38,15 @@ const Navbar = ({ projects }) => {
               </Link>
             </span>
             <li className="sidebar__nav--ulp--l"></li>
-            {taskList &&
-              projects.map((item, index) => {
-                return (
-                  <li key={index} className="sidebar__nav--ulp--l">
-                    <Link to="/Project/id"> Board 1</Link>
-                    {item.title}
-                  </li>
-                );
-              })}
+            {taskList && projects
+              ? projects.map((item, index) => {
+                  return (
+                    <li key={index} className="sidebar__nav--ulp--l">
+                      <Link to="/Project/id">{item.projectTitle}</Link>
+                    </li>
+                  );
+                })
+              : ''}
           </ul>
         </nav>
         <button classsName="sidebar__button">
