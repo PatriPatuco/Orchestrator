@@ -1,5 +1,7 @@
 const AddButton = () => {
-    return <p>Hola</p>
+    return <div>
+        <p></p>
+    </div>
 }
 
 export default AddButton;
