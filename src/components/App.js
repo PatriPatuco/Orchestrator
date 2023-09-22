@@ -1,4 +1,4 @@
-import '../styles/App.scss';
+import '../styles/__app.scss';
 import React, { useState, useEffect } from 'react';
 import Navbar from './Sidebar/Navbar';
 import Project from './Project/Project';
@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import taskData from '../services/taskData.json';
 import ProjectDetail from '../pages/ProjectDetail';
 import Home from '../pages/Home';
-import Header from './Header/header';
+import Header from './Header/Header';
 import Options from './Header/Options';
 import ViewOptions from './Header/ViewOptions';
 
