@@ -1,11 +1,11 @@
 import React from 'react';
 import Project from '../components/Project/Project';
 
-const Home = () => {
+const Home = ({taskData}) => {
   return (
     <>
       Home
-      <Project />
+      <Project taskData={taskData} />
     </>
   );
 };

@@ -1,7 +1,24 @@
 import Task from './Task';
 import AddButton from './AddButton';
 
-const TaskStatus = ({ status, tasks }) => {
+const TaskStatus = () => {
+
+  return (
+    <div className="project__status--column">
+      <h3 className="project__status--title">
+        <span></span>
+      </h3>
+        <Task/>
+    </div>
+  );
+};
+
+export default TaskStatus;
+
+
+
+
+/* const TaskStatus = ({ status, tasks }) => {
   const renderButton = () => {
     if (tasks.length <= 9) {
       return <AddButton />;
@@ -20,6 +37,4 @@ const TaskStatus = ({ status, tasks }) => {
       {renderButton()}
     </div>
   );
-};
-
-export default TaskStatus;
+}; */
