@@ -14,7 +14,9 @@ function App() {
   // const [sidebar, setSidebar] = useState(false);
 
   const [projects, setProjects] = useState(taskData);
+ 
   const [newProject, setNewProject] = useState({
+    projectId: 1,
     projectTitle: "New Project",
     tasks: [
       {
@@ -29,6 +31,11 @@ function App() {
       },
     ],
   });
+
+  
+
+
+
 
   return (
     <>

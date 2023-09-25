@@ -8,11 +8,16 @@ const Project = () => {
 
   return (
     <section className="project">
-      <input type="text" className="project__title" placeholder="New Project"></input>
+      <input
+        type="text"
+        className="project__title"
+        placeholder="New Project"
+      ></input>
+      <button>Save</button>
       <div className="project__status">
-        <TaskStatus/>
-        <TaskStatus/>
-        <TaskStatus/>
+        <TaskStatus placeholder="TODO" />
+        <TaskStatus placeholder="DOING" />
+        <TaskStatus placeholder="DONE" />
       </div>
     </section>
   );

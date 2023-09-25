@@ -1,14 +1,18 @@
 import Task from './Task';
 import AddButton from './AddButton';
 
-const TaskStatus = () => {
+const TaskStatus = ({placeholder}) => {
 
   return (
     <div className="project__status--column">
-      <h3 className="project__status--title">
-        <span></span>
-      </h3>
-        <Task/>
+      <input
+        type="text"
+        className="project__status--title"
+        placeholder={placeholder}
+      ></input>
+      <span></span>
+
+      <Task />
     </div>
   );
 };
