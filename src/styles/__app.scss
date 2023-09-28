@@ -3,6 +3,11 @@
 @import './core/navbar';
 @import './core/header';
 
+input {
+  border: none;
+  background-color: inherit;
+}
+
 .main {
   display: grid;
   grid-template-rows: 75px auto;

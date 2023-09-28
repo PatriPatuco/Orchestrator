@@ -1,44 +1,43 @@
-import '../styles/__app.scss';
-import React, { useState, useEffect } from 'react';
-import Navbar from './Sidebar/Navbar';
-import { Routes, Route } from 'react-router-dom';
-import taskData from '../services/taskData.json';
-import Home from '../pages/Home';
-import ProjectDetail from '../pages/ProjectDetail';
-import Header from './Header/Header';
-import ViewOptions from './Header/ViewOptions';
+import "../styles/__app.scss";
+import React, { useState, useEffect } from "react";
+import Navbar from "./Sidebar/Navbar";
+/* import {useLocation, matchPath } from "react-router"; */
+import { Routes, Route, useLocation, matchPath} from "react-router-dom";
+import taskData from "../services/taskData.json";
+import Project from "../components/Project/Project";
+import Home from "../pages/Home";
+import Header from "./Header/Header";
+import Options from "./Header/Options";
+import ViewOptions from "./Header/ViewOptions";
+import ProjectDetail from "../pages/ProjectDetail";
 
 function App() {
-  // const [taskList, setTaskList] = useState(true);
+  // const [sidebar, setSidebar] = useState(false);
+
   const fakedata = [];
   const [projects, setProjects] = useState(taskData);
-  const [newProject, setNewProject] = useState({
-    projectTitle: 'New Project',
-    tasks: [
-      {
-        id: 1,
-        title: 'Task 1',
-        status: 'TODO',
-        desc: 'Lorem Ipsum',
-        substack: {
-          id: 1,
-          def: 'Lorem Ipsum',
-        },
-      },
-    ],
-  });
+
+  // dynamic routes (projects id)
+
+  const {pathname } = useLocation();
+const routeData = matchPath('project/:id', pathname);
+const projectId = routeData === null ? null : routeData.params.id;
+const projectFound = projects.find((eachProject) => eachProject.id === projectId)
+console.log(projectId)
 
   return (
-    <div className="main">
-      <Header />
-      <Navbar
-        projects={projects}
-        setProjects={setProjects}
-        // taskList={taskList}
-        // setTaskList={setTaskList}
-      />
+    <>
+      <Navbar projects={projects} setProjects={setProjects} />
+      <Home projects={projects} />
+
       <Routes>
-        <Route path="/" element={<Home projects={projects} />}></Route>
+        <Route path="/" element={<Project />}></Route>
+        <Route
+          path="/project/:id"
+          element={<ProjectDetail projectFound={projectFound} />}
+        >
+          Proyecto/id
+        </Route>
       </Routes>
     </div>
   );

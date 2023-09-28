@@ -45,20 +45,15 @@ const Navbar = ({ projects }) => {
                 <MdIcons.MdOutlineKeyboardArrowDown onClick={showTaskList} />
               </Link>
             </span>
-            {taskList && projects
-              ? projects.map((item, index) => {
-                  return (
-                    <li key={index} className="sidebar__nav--ulp--l">
-                      <Link
-                        to="/Project/id"
-                        className="sidebar__nav--ulp--l--a"
-                      >
-                        {item.projectTitle}
-                      </Link>
-                    </li>
-                  );
-                })
-              : ''}
+            <li className="sidebar__nav--ulp--l"></li>
+            {taskList &&
+              projects.map((item, index) => {
+                return (
+                  <li key={index} className="sidebar__nav--ulp--l">
+                    <Link to={`/project/${item.id}`}>{item.title}</Link>
+                  </li>
+                );
+              })}
           </ul>
         </nav>
         <button className="sidebar__button">
