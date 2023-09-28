@@ -1,14 +1,15 @@
 import React from 'react';
-import Options from './Options';
+
 import ViewOptions from './ViewOptions';
 
-const Header = () => {
+const Header = (projects) => {
   return (
-    <>
-      <Options />
-      <ViewOptions />
-    </>
+    <div className="Header">
+      <ViewOptions projects={projects} />
+    </div>
   );
 };
 
 export default Header;
+
+//  cuando se haga click

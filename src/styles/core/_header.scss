@@ -1,0 +1,11 @@
+.header {
+  grid-row: 1;
+  grid-column: 2s/3;
+  &__nav {
+    &--ul {
+      display: flex;
+      font-size: 2rem;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as MdIcons from 'react-icons/md';
-import Project from '../Project/Project';
+import { ReactComponent as ReactLogo } from '../../images/logo.svg';
+import styled from 'styled-components';
 
 const Navbar = ({ projects }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -9,11 +10,18 @@ const Navbar = ({ projects }) => {
   const showSideBar = () => setSidebar(!sidebar);
   const showTaskList = () => setTaskList(!taskList);
 
+  const StyledReactLogo = styled(ReactLogo)`
+    width: 25px;
+    height: 25px;
+  `;
   return (
     <>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
         <h2 className="sidebar__h2">
-          <Link to="/">Orchestrator</Link>
+          <Link to="/" className="sidebar__h2--a">
+            <StyledReactLogo className="sidebar__h2--a--logo" />
+            Orchestrator
+          </Link>
           <span>
             <Link
               to="#"
@@ -37,20 +45,26 @@ const Navbar = ({ projects }) => {
                 <MdIcons.MdOutlineKeyboardArrowDown onClick={showTaskList} />
               </Link>
             </span>
-            <li className="sidebar__nav--ulp--l"></li>
             {taskList && projects
               ? projects.map((item, index) => {
                   return (
                     <li key={index} className="sidebar__nav--ulp--l">
-                      <Link to="/Project/id">{item.projectTitle}</Link>
+                      <Link
+                        to="/Project/id"
+                        className="sidebar__nav--ulp--l--a"
+                      >
+                        {item.projectTitle}
+                      </Link>
                     </li>
                   );
                 })
               : ''}
           </ul>
         </nav>
-        <button classsName="sidebar__button">
-          <Link to="/new">add new project</Link>
+        <button className="sidebar__button">
+          <Link className="sidebar__button--a" to="/new">
+            + Create Board
+          </Link>
         </button>
       </div>
     </>
