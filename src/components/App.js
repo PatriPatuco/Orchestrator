@@ -1,13 +1,15 @@
 import "../styles/__app.scss";
 import React, { useState, useEffect } from "react";
 import Navbar from "./Sidebar/Navbar";
-import { Routes, Route, useLocation, matchPath } from "react-router-dom";
+/* import {useLocation, matchPath } from "react-router"; */
+import { Routes, Route, useLocation, matchPath} from "react-router-dom";
 import taskData from "../services/taskData.json";
 import Project from "../components/Project/Project";
 import Home from "../pages/Home";
 import Header from "./Header/Header";
 import Options from "./Header/Options";
 import ViewOptions from "./Header/ViewOptions";
+import ProjectDetail from "../pages/ProjectDetail";
 
 function App() {
   // const [sidebar, setSidebar] = useState(false);
@@ -15,47 +17,28 @@ function App() {
   const fakedata = [];
   const [projects, setProjects] = useState(taskData);
 
-
   // dynamic routes (projects id)
 
-  const { pathname } = useLocation();
-  const dataUrl = matchPath("/project/:id", pathname);
-
-  console.log(dataUrl);
-
-
-  const getRouteProject = () => {
-    if (dataUrl) {
-      const routeProjectId = dataUrl !== null ? dataUrl.params.id : null;
-      const routeProject = projects.find((project) => {
-        return project.id === routeProjectId;
-      });
-      if (routeProject) {
-        return routeProject;
-      } else {
-        return {};
-      }
-    }
-  }
-
-
- 
+  const {pathname } = useLocation();
+const routeData = matchPath('project/:id', pathname);
+const projectId = routeData === null ? null : routeData.params.id;
+const projectFound = projects.find((eachProject) => eachProject.id === projectId)
+console.log(projectId)
 
   return (
     <>
       <Navbar projects={projects} setProjects={setProjects} />
-      <Home />
+      <Home projects={projects} />
 
-
-        <Routes>
-          <Route path="/" element={<Project />}></Route>
-          <Route
-            path="/project/:id"
-            element={<Project projectInfo={getRouteProject()} />}
-          >
-            Proyecto/id
-          </Route>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Project />}></Route>
+        <Route
+          path="/project/:id"
+          element={<ProjectDetail projectFound={projectFound} />}
+        >
+          Proyecto/id
+        </Route>
+      </Routes>
     </>
   );
 }
