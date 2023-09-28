@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Sidebar/Navbar";
 import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 import taskData from "../services/taskData.json";
-import ProjectDetail from "../pages/ProjectDetail";
+import Project from "../components/Project/Project";
 import Home from "../pages/Home";
 import Header from "./Header/Header";
 import Options from "./Header/Options";
@@ -17,23 +17,45 @@ function App() {
 
 
   // dynamic routes (projects id)
+
   const { pathname } = useLocation();
   const dataUrl = matchPath("/project/:id", pathname);
+
   console.log(dataUrl);
-  const projectId = dataUrl !== null ? dataUrl.params.id : null;
-  const findProject = taskData.find(
-    (eachProject) => eachProject.id === projectId
-  );
+
+
+  const getRouteProject = () => {
+    if (dataUrl) {
+      const routeProjectId = dataUrl !== null ? dataUrl.params.id : null;
+      const routeProject = projects.find((project) => {
+        return project.id === routeProjectId;
+      });
+      if (routeProject) {
+        return routeProject;
+      } else {
+        return {};
+      }
+    }
+  }
+
+
+ 
 
   return (
     <>
       <Navbar projects={projects} setProjects={setProjects} />
-      <Home projects={projects} findProject={findProject} />
+      <Home />
 
-      <Routes>
-        <Route path="/"></Route>
-        <Route path="/project/:id" element={<ProjectDetail/>}>Proyecto/id</Route>
-      </Routes>
+
+        <Routes>
+          <Route path="/" element={<Project />}></Route>
+          <Route
+            path="/project/:id"
+            element={<Project projectInfo={getRouteProject()} />}
+          >
+            Proyecto/id
+          </Route>
+        </Routes>
     </>
   );
 }

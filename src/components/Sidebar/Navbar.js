@@ -40,8 +40,8 @@ const Navbar = ({ projects }) => {
               projects.map((item, index) => {
                 return (
                   <li key={index} className="sidebar__nav--ulp--l">
-                    <Link to="/Project/id"> Board 1</Link>
-                    {item.title}
+                    <Link to={`/project/${item.id}`}>{item.title}</Link>
+                    
                   </li>
                 );
               })}
