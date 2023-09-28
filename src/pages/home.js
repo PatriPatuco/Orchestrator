@@ -1,11 +1,16 @@
-import React from 'react';
-import Project from '../components/Project/Project';
+import React from "react";
+import Project from "../components/Project/Project";
 
-const Home = ({taskData}) => {
+const Home = ({ projects }) => {
   return (
     <>
-      Home
-      <Project taskData={taskData} />
+
+    <Project projects={projects}/>
+      {/* {projects > 0 ? (
+        <Project projects={projects} />
+      ) : (
+        <Project projects={null}/>
+      )} */}
     </>
   );
 };

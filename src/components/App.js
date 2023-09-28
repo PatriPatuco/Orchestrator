@@ -1,8 +1,7 @@
 import "../styles/__app.scss";
 import React, { useState, useEffect } from "react";
 import Navbar from "./Sidebar/Navbar";
-import Project from "./Project/Project";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, matchPath } from "react-router-dom";
 import taskData from "../services/taskData.json";
 import ProjectDetail from "../pages/ProjectDetail";
 import Home from "../pages/Home";
@@ -13,37 +12,27 @@ import ViewOptions from "./Header/ViewOptions";
 function App() {
   // const [sidebar, setSidebar] = useState(false);
 
+  const fakedata = [];
   const [projects, setProjects] = useState(taskData);
- 
-  const [newProject, setNewProject] = useState({
-    projectId: 1,
-    projectTitle: "New Project",
-    tasks: [
-      {
-        id: 1,
-        title: "Task 1",
-        status: "TODO",
-        desc: "Lorem Ipsum",
-        substack: {
-          id: 1,
-          def: "Lorem Ipsum",
-        },
-      },
-    ],
-  });
-
-  
 
 
-
+  // dynamic routes (projects id)
+  const { pathname } = useLocation();
+  const dataUrl = matchPath("/project/:id", pathname);
+  console.log(dataUrl);
+  const projectId = dataUrl !== null ? dataUrl.params.id : null;
+  const findProject = taskData.find(
+    (eachProject) => eachProject.id === projectId
+  );
 
   return (
     <>
       <Navbar projects={projects} setProjects={setProjects} />
-      <Home taskData={taskData} />
+      <Home projects={projects} findProject={findProject} />
+
       <Routes>
         <Route path="/"></Route>
-        <Route path="/Project/id">Proyecto/id</Route>
+        <Route path="/project/:id" element={<ProjectDetail/>}>Proyecto/id</Route>
       </Routes>
     </>
   );

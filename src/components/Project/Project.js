@@ -2,30 +2,42 @@ import TaskStatus from "./TaskStatus";
 import AddButton from "./AddButton";
 import "../../styles/__project.scss";
 
-const Project = () => {
-
-
-
+const Project = ({ projects, findProject }) => {
   return (
-    <section className="project">
-      <input
-        type="text"
-        className="project__title"
-        placeholder="New Project"
-      ></input>
-      <button>Save</button>
-      <div className="project__status">
-        <TaskStatus placeholder="TODO" />
-        <TaskStatus placeholder="DOING" />
-        <TaskStatus placeholder="DONE" />
-      </div>
-    </section>
+    <>
+      {projects > 0 ? (
+        <section className="project">
+          <input
+            type="text"
+            className="project__title"
+            placeholder={projects[2].projectTitle}
+          ></input>
+          <div className="project__status">
+            <TaskStatus placeholder="TODO" />
+            <TaskStatus placeholder="DOING" />
+            <TaskStatus placeholder="DONE" />
+          </div>
+        </section>
+      ) : (
+        <section className="project">
+          <input
+            type="text"
+            className="project__title"
+            placeholder="New Project"
+          ></input>
+          <button>Save</button>
+          <div className="project__status">
+            <TaskStatus placeholder="TODO" />
+            <TaskStatus placeholder="DOING" />
+            <TaskStatus placeholder="DONE" />
+          </div>
+        </section>
+      )}
+    </>
   );
-  }
+};
 
 export default Project;
-
-
 
 /* const Project = ({ taskData }) => {
   const renderButton = () => {
@@ -38,7 +50,7 @@ export default Project;
     objeto status */
 /*   }; */
 
- /*  return (
+/*  return (
     <section className="project">
       <h2 className="project__title">{taskData[0].projectTitle}</h2>
       <div className="project__status">
