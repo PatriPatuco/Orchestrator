@@ -4,12 +4,10 @@ import ViewOptions from './ViewOptions';
 
 const Header = (projects) => {
   return (
-    <div className="Header">
+    <div className="header">
       <ViewOptions projects={projects} />
     </div>
   );
 };
 
 export default Header;
-
-//  cuando se haga click

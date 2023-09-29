@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import * as MdIcons from 'react-icons/md';
 import { ReactComponent as ReactLogo } from '../../images/logo.svg';
 import styled from 'styled-components';
+import ProjectDetail from '../../pages/ProjectDetail';
 
 const Navbar = ({ projects }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -19,7 +20,7 @@ const Navbar = ({ projects }) => {
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
         <h2 className="sidebar__h2">
           <Link to="/" className="sidebar__h2--a">
-            <StyledReactLogo className="sidebar__h2--a--logo" />
+            <StyledReactLogo />
             Orchestrator
           </Link>
           <span>
@@ -58,7 +59,7 @@ const Navbar = ({ projects }) => {
         </nav>
         <button className="sidebar__button">
           <Link className="sidebar__button--a" to="/new">
-            + Create Board
+            <ProjectDetail />+ Create Board
           </Link>
         </button>
       </div>

@@ -15,22 +15,31 @@ function App() {
 
   const fakedata = [];
   const [projects, setProjects] = useState(taskData);
+  const [list, setList] = useState(false);
+
+  const showList = () => {};
 
   // dynamic routes (projects id)
 
   const { pathname } = useLocation();
   const routeData = matchPath('project/:id', pathname);
-  const projectId = routeData === null ? null : routeData.params.id;
-  const projectFound = projects.find(
-    (eachProject) => eachProject.id === projectId
-  );
+  const projectId = routeData !== null ? routeData.params.id : null;
+  const projectFound = projects.find((eachProject) => eachProject);
+
+  const idValue = projectFound.title;
   console.log(projectId);
 
-  return (
-    <>
-      <Navbar projects={projects} setProjects={setProjects} />
-      <Home projects={projects} />
+  const projectFiltered = projects.filter((p) => {
+    return p.id === 0;
+  });
+  console.log(projectFiltered);
 
+  return (
+    <div className="main">
+      <Header />
+      <Navbar projects={projects} setProjects={setProjects} />
+
+      <Home projects={projects} />
       <Routes>
         <Route path="/" element={<Project />}></Route>
         <Route
@@ -40,7 +49,7 @@ function App() {
           Proyecto/id
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
