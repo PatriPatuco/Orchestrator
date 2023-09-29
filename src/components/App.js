@@ -22,17 +22,27 @@ function App() {
   // dynamic routes (projects id)
 
   const { pathname } = useLocation();
-  const routeData = matchPath('project/:id', pathname);
+  const routeData = matchPath('/project/:id', pathname);
   const projectId = routeData !== null ? routeData.params.id : null;
-  const projectFound = projects.find((eachProject) => eachProject);
+  const projectFound = projects
+    .map((eachp) => eachp.id)
+    .find((value) => value === parseInt(projectId));
 
-  const idValue = projectFound.title;
-  console.log(projectId);
+  // const idValue = projects
+  //   .map((eachp) => eachp.id)
+  //   .find((value) => value === parseInt(projectId));
+  // console.log(idValue);
+  // console.log(projectId);
 
-  const projectFiltered = projects.filter((p) => {
-    return p.id === 0;
-  });
-  console.log(projectFiltered);
+  // if (idValue === parseInt(projectId)) {
+  //   return console.log('Olé');
+  // } else {
+  //   console.log('caca');
+  // }
+  // const projectFiltered = projects.filter((p) => {
+  //   return p.id === projectId;
+  // });
+  // console.log(projectFiltered);
 
   return (
     <div className="main">
