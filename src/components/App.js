@@ -1,14 +1,14 @@
-import '../styles/__app.scss';
-import React, { useState, useEffect } from 'react';
-import Navbar from './Sidebar/Navbar';
-/* import {useLocation, matchPath } from "react-router"; */
-import { Routes, Route, useLocation, matchPath } from 'react-router-dom';
-import taskData from '../services/taskData.json';
-import Project from '../components/Project/Project';
-import Home from '../pages/Home.js';
-import Header from './Header/Header';
-import ViewOptions from './Header/ViewOptions';
-import ProjectDetail from '../pages/ProjectDetail';
+import "../styles/__app.scss";
+import React, { useState, useEffect } from "react";
+import Navbar from "./Sidebar/Navbar";
+import { Routes, Route, useLocation, useParams, matchPath} from "react-router-dom";
+import taskData from "../services/taskData.json";
+import Project from "../components/Project/Project";
+import Home from "../pages/Home";
+import Header from "./Header/Header";
+/* import Options from "./Header/Options"; */
+import ViewOptions from "./Header/ViewOptions";
+import ProjectDetail from "../pages/ProjectDetail";
 
 function App() {
   // const [sidebar, setSidebar] = useState(false);
@@ -67,12 +67,12 @@ function App() {
         <Route path="/" element={<Project />}></Route>
         <Route
           path="/project/:id"
-          element={<ProjectDetail projectFound={projectFound} />}
-        >
-          Proyecto/id
-        </Route>
+          element={
+            <ProjectDetail projects={projects}/>
+          }
+        ></Route>
       </Routes>
-    </div>
+    </>
   );
 }
 

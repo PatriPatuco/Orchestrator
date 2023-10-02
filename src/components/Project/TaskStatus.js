@@ -5,6 +5,7 @@ const TaskStatus = ({placeholder}) => {
 
   return (
     <div className="project__status--column">
+      
       <input
         type="text"
         className="project__status--title"
