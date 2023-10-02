@@ -2,18 +2,18 @@ import TaskStatus from "./TaskStatus";
 import AddButton from "./AddButton";
 import "../../styles/__project.scss";
 
-const Project = ({ projects }) => {
+const Project = ({ projectFound }) => {
 
 //Añadir lógica para cargar un proyecto si existe, y si no, vacío 
-
+console.log (projectFound)
   return (
     <>
-      {/* {projects ? (
+      { projectFound ? (
         <section className="project">
           <input
             type="text"
             className="project__title"
-            placeholder={projects[0].title}
+            placeholder={projectFound.title}
           ></input>
           <div className="project__status">
             <TaskStatus placeholder="TODO" />
@@ -35,7 +35,7 @@ const Project = ({ projects }) => {
             <TaskStatus placeholder="DONE" />
           </div>
         </section>
-      )} */}
+      )}
     </>
   );
 };

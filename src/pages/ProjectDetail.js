@@ -12,26 +12,22 @@ const ProjectDetail = ({ projects }) => {
     return <p>Cargando datos...</p>;
   }
 
-  const projectId = parseInt(id, 10); // Convierte id a número base 10
+  const projectId = parseInt(id);
   const projectFound = projects.find(
     (eachProject) => eachProject.id === projectId
   );
 
-  /* 
-  // Utiliza 'id' para buscar el proyecto correspondiente
-  const projectFound = projects.find((eachProject) => eachProject.id === id); */
-
   console.log(projectFound);
   return (
     <div>
-      {projectFound ? (
+        <Project projectFound={projectFound} />
+     {/*  {projectFound ? (
         <>
-          <h2>Detalles del Proyecto {id}</h2>
           <Project project={projectFound} />
         </>
       ) : (
         <p>Proyecto no encontrado</p>
-      )}
+      )} */}
     </div>
   );
 };
