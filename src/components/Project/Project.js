@@ -1,14 +1,22 @@
+import React, { useState, useEffect } from "react";
 import TaskStatus from "./TaskStatus";
 import AddButton from "./AddButton";
 import "../../styles/__project.scss";
 
 const Project = ({ projectFound }) => {
+  const [statuses, setStatuses] = useState([]);
+  console.log("statuses", statuses)
 
-//Añadir lógica para cargar un proyecto si existe, y si no, vacío 
-console.log (projectFound)
+  useEffect(() => {
+    // Verifica si projectFound tiene status y establece el estado
+    if (projectFound && projectFound.status) {
+      setStatuses(projectFound.status);
+    }
+  }, [projectFound]);
+  console.log(projectFound);
   return (
     <>
-      { projectFound ? (
+      {projectFound ? (
         <section className="project">
           <input
             type="text"
@@ -16,9 +24,10 @@ console.log (projectFound)
             placeholder={projectFound.title}
           ></input>
           <div className="project__status">
-            <TaskStatus placeholder="TODO" />
-            <TaskStatus placeholder="DOING" />
-            <TaskStatus placeholder="DONE" />
+            {/* Mapear los status del proyecto */}
+            {statuses.map((statusItem, index) => (
+              <TaskStatus key={index} item={statusItem} />
+            ))}
           </div>
         </section>
       ) : (

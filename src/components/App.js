@@ -15,12 +15,6 @@ function App() {
 
   const fakedata = [];
   const [projects, setProjects] = useState(taskData);
-   const [projectDet, setProjectDet] = useState({});
-
-   console.log("info guardada", projectDet)
-/*    console.log(projects) */
-
-  // dynamic routes (projects id)
 
   return (
     <>

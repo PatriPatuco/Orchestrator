@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Project from "../components/Project/Project";
 
 const ProjectDetail = ({ projects }) => {
+
+  // dynamic routes (projects id)
   console.log("props de ProjectDetail", projects);
   const { id } = useParams();
   console.log("ID de useParams:", id);
@@ -20,8 +22,8 @@ const ProjectDetail = ({ projects }) => {
   console.log(projectFound);
   return (
     <div>
-        <Project projectFound={projectFound} />
-     {/*  {projectFound ? (
+      <Project projectFound={projectFound} />
+      {/*  {projectFound ? (
         <>
           <Project project={projectFound} />
         </>
