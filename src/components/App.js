@@ -65,15 +65,11 @@ function App() {
         ></Route>
         <Route
           path="/project/:id"
-          element={
-            <ProjectDetail projects={projects} viewProject={viewProject} />
-          }
+          element={<Home projects={projects} viewProject={viewProject} />}
         ></Route>
         <Route
           path="/new"
-          element={
-            <ProjectDetail projects={projects} viewProject={viewProject} />
-          }
+          element={<Home projects={projects} viewProject={viewProject} />}
         ></Route>
       </Routes>
     </div>
