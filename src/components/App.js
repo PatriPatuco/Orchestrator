@@ -1,14 +1,20 @@
-import "../styles/__app.scss";
-import React, { useState, useEffect } from "react";
-import Navbar from "./Sidebar/Navbar";
-import { Routes, Route, useLocation, useParams, matchPath} from "react-router-dom";
-import taskData from "../services/taskData.json";
-import Project from "../components/Project/Project";
-import Home from "../pages/Home";
-import Header from "./Header/Header";
+import '../styles/__app.scss';
+import React, { useState, useEffect } from 'react';
+import Navbar from './Sidebar/Navbar';
+import {
+  Routes,
+  Route,
+  useLocation,
+  useParams,
+  matchPath,
+} from 'react-router-dom';
+import taskData from '../services/taskData.json';
+import Project from '../components/Project/Project';
+import Home from '../pages/Home';
+import Header from './Header/Header';
 /* import Options from "./Header/Options"; */
-import ViewOptions from "./Header/ViewOptions";
-import ProjectDetail from "../pages/ProjectDetail";
+import ViewOptions from './Header/ViewOptions';
+import ProjectDetail from '../pages/ProjectDetail';
 
 function App() {
   // const [sidebar, setSidebar] = useState(false);
@@ -17,21 +23,11 @@ function App() {
   const [projects, setProjects] = useState(taskData);
   const [viewProject, setViewProject] = useState(false);
 
-  // dynamic routes (projects id)
+  // const { id } = useParams();
+  // const projectId = parseInt(id, 10);
 
-  const { pathname } = useLocation();
-  const routeData = matchPath('/project/:id', pathname);
-  const projectId = routeData !== null ? routeData.params.id : null;
-  const filteredChar = () => {
-    return projects.filter((eachChar) => {
-      return eachChar.id;
-    });
-  };
-
-  const projectFound = filteredChar().find(
-    (value) => value.id === parseInt(projectId)
-  );
-  console.log(projectFound);
+  // const projectFound = projects.find((value) => value.id === projectId);
+  // console.log(projectFound);
 
   // === parseInt(projectId)
   // const projectFound = projects.map((eachp) => eachp);
@@ -62,17 +58,25 @@ function App() {
       <Header projects={projects} showView={showView} />
       <Navbar projects={projects} />
 
-      <Home projects={projects} viewProject={viewProject} />
       <Routes>
-        <Route path="/" element={<Project />}></Route>
+        <Route
+          path="/"
+          element={<Home projects={projects} viewProject={viewProject} />}
+        ></Route>
         <Route
           path="/project/:id"
           element={
-            <ProjectDetail projects={projects}/>
+            <ProjectDetail projects={projects} viewProject={viewProject} />
+          }
+        ></Route>
+        <Route
+          path="/new"
+          element={
+            <ProjectDetail projects={projects} viewProject={viewProject} />
           }
         ></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

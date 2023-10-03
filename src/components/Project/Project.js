@@ -1,24 +1,34 @@
-import TaskStatus from "./TaskStatus";
-import AddButton from "./AddButton";
-import "../../styles/__project.scss";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import TaskStatus from './TaskStatus';
+import AddButton from './AddButton';
+import '../../styles/__project.scss';
 
-const Project = ({ projects }) => {
+const Project = ({ projectFound, viewProject }) => {
+  const [statuses, setStatuses] = useState([]);
+  console.log('statuses', statuses);
 
-//Añadir lógica para cargar un proyecto si existe, y si no, vacío 
-
+  useEffect(() => {
+    // Verifica si projectFound tiene status y establece el estado
+    if (projectFound && projectFound.status) {
+      setStatuses(projectFound.status);
+    }
+  }, [projectFound]);
+  console.log(projectFound);
   return (
     <>
-      {/* {projects ? (
+      {projectFound ? (
         <section className="project">
           <input
             type="text"
             className="project__title"
-            placeholder={projects[0].title}
+            placeholder={projectFound.title}
           ></input>
           <div className="project__status">
-            <TaskStatus placeholder="TODO" />
-            <TaskStatus placeholder="DOING" />
-            <TaskStatus placeholder="DONE" />
+            {/* Mapear los status del proyecto */}
+            {statuses.map((statusItem, index) => (
+              <TaskStatus key={index} item={statusItem} />
+            ))}
           </div>
         </section>
       ) : (
@@ -35,7 +45,7 @@ const Project = ({ projects }) => {
             <TaskStatus placeholder="DONE" />
           </div>
         </section>
-      )} */}
+      )}
     </>
   );
 };

@@ -59,7 +59,7 @@ const Navbar = ({ projects }) => {
         </nav>
         <button className="sidebar__button">
           <Link className="sidebar__button--a" to="/new">
-            <ProjectDetail />+ Create Board
+            + Create Board
           </Link>
         </button>
       </div>

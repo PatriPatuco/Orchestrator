@@ -1,109 +1,226 @@
 [
   {
-    "id":1,
+    "id": 1,
     "title": "Project 01",
-    "tasks": [
-      {
-        "id":1,
-        "title": "Task 1",
-        "status": "TODO",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      },
-      {
-        "id":2,
-        "title": "Task 2",
-        "status": "DOING",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      },
-      {
-        "id":3,
-        "title": "Task 3",
-        "status": "DONE",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Project 02",
-    "tasks": [
+    "status": [
       {
         "id": 1,
-        "title": "Task 1",
-        "status": "TODO",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "name": "TODO 01",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 2,
+            "title": "Task 2",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
       },
       {
         "id": 2,
-        "title": "Task 2",
-        "status": "DOING",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "name": "DOING 01",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 2,
+            "title": "Task 2",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 3,
+            "title": "Task 3",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
       },
       {
         "id": 3,
-        "title": "Task 3",
-        "status": "DONE",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "name": "DONE 01",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
       }
     ]
   },
   {
-    "id": 3,
-    "title": "Project 03",
-    "tasks": [
+     "id": 2,
+    "title": "Project 02",
+    "status": [
       {
         "id": 1,
-        "title": "Task 1",
-        "status": "TODO",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "name": "TODO 02",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+            }
+        ]
       },
       {
-        "id":2,
-        "title": "Task 2",
-        "status": "DOING",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "id": 2,
+        "name": "DOING 02",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 2,
+            "title": "Task 2",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 3,
+            "title": "Task 3",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
       },
       {
-        "id":3,
-        "title": "Task 3",
-        "status": "DONE",
-        "desc": "Lorem Ipsum",
-        "subtasck": {
-          "id": 1,
-          "def": "Lorem Ipsum"
-        }
+        "id": 3,
+        "name": "DONE 02",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 2,
+            "title": "Task 2",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
+      }
+    ]
+  },
+  {
+     "id": 3,
+    "title": "Project 03",
+    "status": [
+      {
+        "id": 1,
+        "name": "TODO 03",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 2,
+            "title": "Task 2",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          },
+          {
+            "id": 3,
+            "title": "Task 3",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "DOING 03",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "DONE 03",
+        "tasks": [
+          {
+            "id": 1,
+            "title": "Task 1",
+            "desc": "Lorem Ipsum",
+            "subtask": [{
+              "id": 1,
+              "def": "Lorem Ipsum"
+            }]
+          }
+        ]
       }
     ]
   }
