@@ -14,6 +14,7 @@ const ProjectDetail = ({ projects }) => {
   }
 
   const projectId = parseInt(id);
+  const projectId = parseInt(id);
   const projectFound = projects.find(
     (eachProject) => eachProject.id === projectId
   );
@@ -23,11 +24,14 @@ const ProjectDetail = ({ projects }) => {
     <div>
       <Project projectFound={projectFound} />
       {/*  {projectFound ? (
+      <Project projectFound={projectFound} />
+      {/*  {projectFound ? (
         <>
           <Project project={projectFound} />
         </>
       ) : (
         <p>Proyecto no encontrado</p>
+      )} */}
       )} */}
     </div>
   );

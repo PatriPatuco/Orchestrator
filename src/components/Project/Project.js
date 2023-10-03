@@ -4,7 +4,7 @@ import TaskStatus from './TaskStatus';
 import AddButton from './AddButton';
 import '../../styles/__project.scss';
 
-const Project = ({ projectFound, viewProject }) => {
+const Project = ({ projectFound }) => {
   const [statuses, setStatuses] = useState([]);
   console.log('statuses', statuses);
 
