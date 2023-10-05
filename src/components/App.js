@@ -1,26 +1,19 @@
 import '../styles/__app.scss';
 import React, { useState, useEffect } from 'react';
 import Navbar from './Sidebar/Navbar';
-import {
-  Routes,
-  Route,
-  useLocation,
-  useParams,
-  matchPath,
-} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import taskData from '../services/taskData.json';
-import Project from '../components/Project/Project';
+
 import Home from '../pages/Home';
 import Header from './Header/Header';
-/* import Options from "./Header/Options"; */
-import ViewOptions from './Header/ViewOptions';
+import NewProject from './Project/NewProject';
 import ProjectDetail from '../pages/ProjectDetail';
 
 function App() {
   // const [sidebar, setSidebar] = useState(false);
 
   const fakedata = [];
-  const [projects, setProjects] = useState(taskData);
+  const [projects] = useState(taskData);
   const [viewProject, setViewProject] = useState(false);
 
   // const { id } = useParams();
@@ -65,11 +58,13 @@ function App() {
         ></Route>
         <Route
           path="/project/:id"
-          element={<Home projects={projects} viewProject={viewProject} />}
+          element={
+            <ProjectDetail projects={projects} viewProject={viewProject} />
+          }
         ></Route>
         <Route
           path="/new"
-          element={<Home projects={projects} viewProject={viewProject} />}
+          element={<NewProject projects={projects} viewProject={viewProject} />}
         ></Route>
       </Routes>
     </div>

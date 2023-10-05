@@ -4,6 +4,9 @@
   background-color: $mid-white;
   font-family: $regular;
   padding: 4rem;
+  &.list {
+    display: none;
+  }
 
   &__title {
     font-size: 3.2rem;

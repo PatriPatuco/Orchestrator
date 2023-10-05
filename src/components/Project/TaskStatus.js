@@ -1,8 +1,8 @@
-import React from "react";
-import Task from "./Task";
-import { useState, useEffect } from "react";
+import React from 'react';
+import Task from './Task';
+import { useState, useEffect } from 'react';
 
-const TaskStatus = ({ item }) => {
+const TaskStatus = ({ item, viewProject }) => {
   console.log(item);
   const [tasks, setTasks] = useState([]);
 
@@ -13,7 +13,6 @@ const TaskStatus = ({ item }) => {
     }
   }, [item]);
 
-
   if (!item) {
     return null; // Si no hay item, lo deja limpio
   }
@@ -23,18 +22,17 @@ const TaskStatus = ({ item }) => {
       <input
         type="text"
         className="project__status--title"
-        placeholder={item.name || ""}
+        placeholder={item.name || ''}
       ></input>
       <span className="project__status--span">{`(${item.tasks.length})`}</span>
       {tasks.map((taskItem, index) => (
-        <Task key={index} item={taskItem} />
+        <Task key={index} item={taskItem} viewProject={viewProject} />
       ))}
     </div>
   );
 };
 
 export default TaskStatus;
-
 
 /* const TaskStatus = ({ status, tasks }) => {
   const renderButton = () => {

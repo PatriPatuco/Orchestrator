@@ -2,11 +2,10 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Project from '../components/Project/Project';
 
-const ProjectDetail = ({ projects }) => {
+const ProjectDetail = ({ projects, viewProject }) => {
   // dynamic routes (projects id)
   console.log('props de ProjectDetail', projects);
   const { id } = useParams();
-  console.log('ID de useParams:', id);
 
   // Verificar si 'projects' está definido antes de buscar el proyecto
   if (!projects) {
@@ -14,15 +13,14 @@ const ProjectDetail = ({ projects }) => {
   }
 
   const projectId = parseInt(id);
-  const projectId = parseInt(id);
   const projectFound = projects.find(
     (eachProject) => eachProject.id === projectId
   );
 
-  console.log(projectFound);
+  console.log('---->', projectFound);
   return (
     <div>
-      <Project projectFound={projectFound} />
+      <Project projectFound={projectFound} viewProject={viewProject} />
       {/*  {projectFound ? (
       <Project projectFound={projectFound} />
       {/*  {projectFound ? (
@@ -31,7 +29,6 @@ const ProjectDetail = ({ projects }) => {
         </>
       ) : (
         <p>Proyecto no encontrado</p>
-      )} */}
       )} */}
     </div>
   );

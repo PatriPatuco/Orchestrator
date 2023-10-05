@@ -4,48 +4,27 @@ import TaskStatus from './TaskStatus';
 import AddButton from './AddButton';
 import '../../styles/__project.scss';
 
-const Project = ({ projectFound }) => {
-  const [statuses, setStatuses] = useState([]);
-  console.log('statuses', statuses);
-
-  useEffect(() => {
-    // Verifica si projectFound tiene status y establece el estado
-    if (projectFound && projectFound.status) {
-      setStatuses(projectFound.status);
-    }
-  }, [projectFound]);
-  console.log(projectFound);
+const Project = ({ projectFound, viewProject }) => {
   return (
     <>
-      {projectFound ? (
-        <section className="project">
-          <input
-            type="text"
-            className="project__title"
-            placeholder={projectFound.title}
-          ></input>
-          <div className="project__status">
-            {/* Mapear los status del proyecto */}
-            {statuses.map((statusItem, index) => (
-              <TaskStatus key={index} item={statusItem} />
-            ))}
-          </div>
-        </section>
-      ) : (
-        <section className="project">
-          <input
-            type="text"
-            className="project__title"
-            placeholder="New Project"
-          ></input>
-          <button>Save</button>
-          <div className="project__status">
-            <TaskStatus placeholder="TODO" />
-            <TaskStatus placeholder="DOING" />
-            <TaskStatus placeholder="DONE" />
-          </div>
-        </section>
-      )}
+      <section className="project">
+        <input
+          type="text"
+          className="project__title"
+          placeholder={projectFound.title}
+        ></input>
+        <div className="project__status">
+          {/* Mapear los status del proyecto */}
+          {projectFound.status.map((statusItem, index) => (
+            <TaskStatus
+              key={index}
+              item={statusItem}
+              viewProject={viewProject}
+            />
+          ))}
+        </div>
+      </section>
+      ;
     </>
   );
 };

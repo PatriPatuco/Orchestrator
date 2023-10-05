@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import ProjectDetail from './ProjectDetail';
-import Navbar from '../components/Sidebar/Navbar';
-import * as MdIcons from 'react-icons/md';
-import { Link } from 'react-router-dom';
-import Project from '../components/Project/Project';
+import React from 'react';
+import NewProject from '../components/Project/NewProject';
 
 const Home = ({ projects, viewProject }) => {
   return (
     <div className="home">
-      <ProjectDetail projects={projects} />
+      <NewProject projects={projects} viewProject={viewProject} />
       {/* {projects > 0 ? (
         <Project projects={projects} />
       ) : (
         <Project projects={null}/>
       )} */}
-      {viewProject &&
-        projects.map((item, index) => {
-          return (
-            <li key={index} className="sidebar__nav--ulp--l">
-              <Link to={`/project/${item.tasks}`}>{item.title}</Link>
-            </li>
-          );
-        })}
+      {/* {viewProject &&
+          projects.map((item, index) => {
+            return (
+              <li key={index} className="sidebar__nav--ulp--l">
+                <Link to={`/project/${item.id}`}>{item.title}</Link>
+              </li>
+            );
+          })} */}
     </div>
   );
 };
