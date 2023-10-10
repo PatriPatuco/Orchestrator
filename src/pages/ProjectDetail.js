@@ -1,11 +1,16 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import Project from '../components/Project/Project';
+import { useParams, useSearchParams } from 'react-router-dom';
+import BoardProject from '../components/Project/BoardView/BoardProject';
+import ListView from '../components/Project/ListView';
+import CalendarView from '../components/Project/CalendarView';
 
 const ProjectDetail = ({ projects, viewProject }) => {
   // dynamic routes (projects id)
   console.log('props de ProjectDetail', projects);
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+
+  const view = searchParams.get('view') || 'default';
 
   // Verificar si 'projects' está definido antes de buscar el proyecto
   if (!projects) {
@@ -16,22 +21,32 @@ const ProjectDetail = ({ projects, viewProject }) => {
   const projectFound = projects.find(
     (eachProject) => eachProject.id === projectId
   );
+  console.log(projectFound);
 
-  console.log('---->', projectFound);
   return (
     <div>
-      <Project projectFound={projectFound} viewProject={viewProject} />
-      {/*  {projectFound ? (
-      <Project projectFound={projectFound} />
-      {/*  {projectFound ? (
-        <>
-          <Project project={projectFound} />
-        </>
+      {view === 'list' ? (
+        <ListView projectFound={projectFound} viewProject={viewProject} />
+      ) : view === 'board' ? (
+        <BoardProject projectFound={projectFound} viewProject={viewProject} />
+      ) : view === 'calendar' ? (
+        <CalendarView project={projectFound} viewProject={viewProject} />
       ) : (
-        <p>Proyecto no encontrado</p>
-      )} */}
+        <BoardProject projectFound={projectFound} />
+      )}
     </div>
   );
 };
 
 export default ProjectDetail;
+
+// const projectDetailContent =
+//   view === 'list' ? (
+//     <ListView project={projectFound} viewProject={viewProject} />
+//   ) : view === 'board' ? (
+//     <Project projectFound={projectFound} viewProject={viewProject} />
+//   ) : view === 'calendar' ? (
+//     <CalendarView project={projectFound} viewProject={viewProject} />
+//   ) : (
+//     <Project projectFound={projectFound} />
+//   );

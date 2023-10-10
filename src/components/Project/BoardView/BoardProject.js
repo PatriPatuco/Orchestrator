@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import TaskStatus from './TaskStatus';
-import AddButton from './AddButton';
+import BoardStatus from './BoardStatus';
 import '../../styles/__project.scss';
 
 const Project = ({ projectFound, viewProject }) => {
+  console.log(projectFound);
   return (
     <>
       <section className="project">
@@ -16,7 +15,7 @@ const Project = ({ projectFound, viewProject }) => {
         <div className="project__status">
           {/* Mapear los status del proyecto */}
           {projectFound.status.map((statusItem, index) => (
-            <TaskStatus
+            <BoardStatus
               key={index}
               item={statusItem}
               viewProject={viewProject}

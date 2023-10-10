@@ -1,19 +1,19 @@
 import React from 'react';
-import Task from './Task';
+import BoardTask from './BoardTask';
 import { useState, useEffect } from 'react';
 
-const TaskStatus = ({ item, viewProject }) => {
-  console.log(item);
-  const [tasks, setTasks] = useState([]);
+const TaskStatus = (props) => {
+  console.log(props.item);
+  // const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    // Verifica si TaskStatus tiene tasks y establece el estado
-    if (item && item.tasks) {
-      setTasks(item.tasks);
-    }
-  }, [item]);
+  // useEffect(() => {
+  //   // Verifica si TaskStatus tiene tasks y establece el estado
+  //   if (item && item.tasks) {
+  //     setTasks(item.tasks);
+  //   }
+  // }, [item]);
 
-  if (!item) {
+  if (!props.item) {
     return null; // Si no hay item, lo deja limpio
   }
 
@@ -22,11 +22,15 @@ const TaskStatus = ({ item, viewProject }) => {
       <input
         type="text"
         className="project__status--title"
-        placeholder={item.name || ''}
+        placeholder={props.item.name || ''}
       ></input>
-      <span className="project__status--span">{`(${item.tasks.length})`}</span>
-      {tasks.map((taskItem, index) => (
-        <Task key={index} item={taskItem} viewProject={viewProject} />
+      <span className="project__status--span">{`(${props.item.tasks.length})`}</span>
+      {props.item.tasks.map((taskItem, index) => (
+        <BoardTask
+          key={index}
+          item={taskItem}
+          viewProject={props.viewProject}
+        />
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskStatus from './TaskStatus';
+import BoardStatus from '../Project/BoardView/BoardStatus';
 
 const NewProject = () => {
   return (
@@ -11,9 +11,9 @@ const NewProject = () => {
       ></input>
       <button>Save</button>
       <div className="project__status">
-        <TaskStatus placeholder="TODO" />
-        <TaskStatus placeholder="DOING" />
-        <TaskStatus placeholder="DONE" />
+        <BoardStatus placeholder="TODO" />
+        <BoardStatus placeholder="DOING" />
+        <BoardStatus placeholder="DONE" />
       </div>
     </section>
   );

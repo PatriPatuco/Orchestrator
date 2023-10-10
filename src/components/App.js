@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './Sidebar/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import taskData from '../services/taskData.json';
-
 import Home from '../pages/Home';
 import Header from './Header/Header';
 import NewProject from './Project/NewProject';

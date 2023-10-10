@@ -1,4 +1,4 @@
-const Task = ({item}) => {
+const BoardTask = ({ item }) => {
   return (
     <div className="project__status--task">
       <h4 className="project__status--task--title">{item.title}</h4>
@@ -8,4 +8,4 @@ const Task = ({item}) => {
     </div>
   );
 };
-export default Task;
+export default BoardTask;

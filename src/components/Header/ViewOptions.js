@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 
-const ViewOptions = ({ projects, showView }) => {
-  const handleView = (ev) => {
-    console.log('he hecho click :', ev.target);
-    showView(true);
+const ViewOptions = ({ showView }) => {
+  const [, setSearchParams] = useSearchParams();
+
+  const handleView = (view) => {
+    setSearchParams({ view });
   };
+
   return (
     <>
       <nav className="header__nav">
         <ul className="header__nav--ul">
-          <li onClick={handleView}>List</li>
-          <li>Board</li>
-          <li>Calendar</li>
-          <li>View Mode</li>
+          <li onClick={() => handleView('list')}>List</li>
+          <li onClick={() => handleView('board')}>Board</li>
+          <li onClick={() => handleView('calendar')}>Calendar</li>
+          <li onClick={() => handleView('viewMode')}>View Mode</li>
         </ul>
       </nav>
     </>
