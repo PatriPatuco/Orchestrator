@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import BoardStatus from './BoardStatus';
-import '../../styles/__project.scss';
+import '../../../styles/components/BoardView.scss'
 
-const Project = ({ projectFound, viewProject }) => {
-  console.log(projectFound);
+const BoardProject = ({ projectFound, viewProject, showTaskInfo }) => {
   return (
     <>
       <section className="project">
@@ -19,6 +17,7 @@ const Project = ({ projectFound, viewProject }) => {
               key={index}
               item={statusItem}
               viewProject={viewProject}
+              showTaskInfo={showTaskInfo}
             />
           ))}
         </div>
@@ -28,7 +27,7 @@ const Project = ({ projectFound, viewProject }) => {
   );
 };
 
-export default Project;
+export default BoardProject;
 
 /* const Project = ({ taskData }) => {
   const renderButton = () => {

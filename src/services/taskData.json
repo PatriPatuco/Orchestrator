@@ -5,7 +5,7 @@
     "status": [
       {
         "id": 1,
-        "name": "TODO 01",
+        "name": "TODO",
         "tasks": [
           {
             "id": 1,
@@ -29,7 +29,7 @@
       },
       {
         "id": 2,
-        "name": "DOING 01",
+        "name": "DOING",
         "tasks": [
           {
             "id": 1,
@@ -37,7 +37,13 @@
             "desc": "Lorem Ipsum",
             "subtask": [{
               "id": 1,
-              "def": "Lorem Ipsum"
+              "def": "Lavar los platos"
+            },
+          {"id": 2,
+              "def": "Planchar la ropa"},
+            {
+              "id": 3,
+              "def": "Quitar el polvo"
             }]
           },
           {
@@ -62,7 +68,7 @@
       },
       {
         "id": 3,
-        "name": "DONE 01",
+        "name": "DONE",
         "tasks": [
           {
             "id": 1,
@@ -83,7 +89,7 @@
     "status": [
       {
         "id": 1,
-        "name": "TODO 02",
+        "name": "TODO",
         "tasks": [
           {
             "id": 1,
@@ -95,10 +101,10 @@
             }]
             }
         ]
-      },
+      }, 
       {
         "id": 2,
-        "name": "DOING 02",
+        "name": "DOING",
         "tasks": [
           {
             "id": 1,
@@ -131,7 +137,7 @@
       },
       {
         "id": 3,
-        "name": "DONE 02",
+        "name": "DONE",
         "tasks": [
           {
             "id": 1,

@@ -1,17 +1,7 @@
 import React from 'react';
 import BoardTask from './BoardTask';
-import { useState, useEffect } from 'react';
 
 const TaskStatus = (props) => {
-  console.log(props.item);
-  // const [tasks, setTasks] = useState([]);
-
-  // useEffect(() => {
-  //   // Verifica si TaskStatus tiene tasks y establece el estado
-  //   if (item && item.tasks) {
-  //     setTasks(item.tasks);
-  //   }
-  // }, [item]);
 
   if (!props.item) {
     return null; // Si no hay item, lo deja limpio
@@ -22,7 +12,7 @@ const TaskStatus = (props) => {
       <input
         type="text"
         className="project__status--title"
-        placeholder={props.item.name || ''}
+        placeholder={props.item.name || ""}
       ></input>
       <span className="project__status--span">{`(${props.item.tasks.length})`}</span>
       {props.item.tasks.map((taskItem, index) => (
@@ -30,6 +20,7 @@ const TaskStatus = (props) => {
           key={index}
           item={taskItem}
           viewProject={props.viewProject}
+          showTaskInfo={props.showTaskInfo}
         />
       ))}
     </div>

@@ -1,7 +1,9 @@
-@import './core/reset';
-@import './core/variables';
-@import './core/navbar';
-@import './core/header';
+@import './core/_reset';
+@import './core/_variables';
+@import './components/Navbar';
+@import './components/Header';
+@import './components/BoardView';
+@import './components/TaskDetail';
 
 input {
   border: none;
