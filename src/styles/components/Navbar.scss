@@ -1,0 +1,85 @@
+.sidebar {
+  grid-row: 1;
+  grid-column: 1/1;
+  height: 100vh;
+  width: 100px;
+  background-color: lightblue;
+  font-family: $regular;
+  justify-content: space-between;
+
+  &.active {
+    width: 280px;
+    grid-column: 1/2;
+    // left: 0px;
+    transition: 350ms;
+  }
+  &__h2 {
+    flex-wrap: wrap;
+    display: flex;
+    font-size: initial;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    &--a {
+      text-decoration: none;
+    }
+  }
+  &__h3 {
+    font-size: 2rem;
+    list-style-type: none;
+    margin: 10px 0;
+    &--span {
+      font-size: 2rem;
+      &.active {
+        display: inline-block;
+        transform: rotate(180deg);
+        margin: 3px 0;
+      }
+    }
+  }
+  &__nav {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+
+    &--ulp {
+      font-size: 2rem;
+      &--l {
+        font-size: 2rem;
+        line-height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        margin: 3px 0px;
+        &--a {
+          text-decoration: none;
+          margin: 5px;
+          &--logo {
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    background-color: $blue;
+    min-height: 30px;
+    border-radius: 7px;
+    border-style: none;
+    padding-block: 3px;
+    padding-inline: 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+    &--a {
+      color: white;
+      font-family: $regular;
+      margin: 2px 25px;
+      font-size: 1.5rem;
+    }
+  }
+}

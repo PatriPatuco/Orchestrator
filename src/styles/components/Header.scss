@@ -1,0 +1,12 @@
+.header {
+  grid-row: 1;
+  grid-column: 2/3;
+
+  &__nav {
+    &--ul {
+      display: flex;
+      font-size: 2rem;
+      justify-content: space-around;
+    }
+  }
+}
