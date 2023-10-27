@@ -1,0 +1,27 @@
+@import './core/reset';
+@import './core/variables';
+@import './components/BoardView.scss';
+@import './components/Header.scss';
+@import './components/ListView.scss';
+@import './components/Navbar.scss';
+
+input {
+  border: none;
+  background-color: inherit;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 75px auto;
+  grid-template-columns: 200px auto;
+  &.retracted {
+    grid-template-columns: 300px auto;
+  }
+  .home {
+    grid-row: 2;
+    grid-column: 2/2;
+    &.retracted {
+      grid-column: 2/2;
+    }
+  }
+}

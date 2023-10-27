@@ -2,13 +2,14 @@
   grid-row: 1;
   grid-column: 1/1;
   height: 100vh;
-  width: 120px;
+  width: 100px;
   background-color: lightblue;
   font-family: $regular;
   justify-content: space-between;
 
   &.active {
     width: 280px;
+    grid-column: 1/2;
     // left: 0px;
     transition: 350ms;
   }

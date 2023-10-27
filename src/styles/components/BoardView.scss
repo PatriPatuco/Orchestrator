@@ -1,6 +1,8 @@
-@import './core/variables';
+@import '../core/variables';
 
 .project {
+  grid-row: 4;
+  grid-column: 2;
   background-color: $mid-white;
   font-family: $regular;
   padding: 4rem;

@@ -24,9 +24,9 @@ const ProjectDetail = ({ projects, viewProject }) => {
   console.log(projectFound);
 
   return (
-    <div>
+    <div className="project-detail">
       {view === 'list' ? (
-        <ListView projectFound={projectFound} viewProject={viewProject} />
+        <ListView projectFound={projectFound} />
       ) : view === 'board' ? (
         <BoardProject projectFound={projectFound} viewProject={viewProject} />
       ) : view === 'calendar' ? (

@@ -5,10 +5,15 @@ import { ReactComponent as ReactLogo } from '../../images/logo.svg';
 import styled from 'styled-components';
 import ProjectDetail from '../../pages/ProjectDetail';
 
-const Navbar = ({ projects }) => {
+const Navbar = ({ projects, setRetracted, retracted }) => {
+  console.log(projects);
   const [sidebar, setSidebar] = useState(false);
   const [taskList, setTaskList] = useState(true);
-  const showSideBar = () => setSidebar(!sidebar);
+  const showSideBar = () => {
+    setSidebar(!sidebar);
+    setRetracted(!retracted);
+  };
+
   const showTaskList = () => setTaskList(!taskList);
 
   const StyledReactLogo = styled(ReactLogo)`
