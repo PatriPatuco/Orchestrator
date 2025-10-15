@@ -1,9 +1,10 @@
-@import '../core/_variables';
+@import "../core/_variables";
 
 .project {
   background-color: $mid-white;
   font-family: $regular;
   padding: 4rem;
+
   &.list {
     display: none;
   }
@@ -24,13 +25,18 @@
     display: flex;
     gap: 5.6rem;
 
+    &--header {
+      display: flex;
+      border-bottom: 0.2rem $light-blue solid;
+      margin-bottom: 2rem;
+      width: 20rem;
+    }
+
     &--title {
       font-size: 2rem;
       font-weight: 700;
-      width: 18rem;
       padding-bottom: 1rem;
-      margin-bottom: 2rem;
-      border-bottom: 0.2rem $light-blue solid;
+      width: 100%;
 
       &::placeholder {
         color: $black;
@@ -40,9 +46,7 @@
     &--span {
       font-size: 2rem;
       font-weight: 700;
-      width: 18rem;
       padding-bottom: 1rem;
-      margin-bottom: 2rem;
       color: $blue;
     }
 
@@ -52,6 +56,7 @@
       border: 0.1rem solid $light-blue;
       padding: 2.5rem;
       margin-bottom: 2rem;
+      cursor: pointer;
 
       &--title {
         font-weight: 600;

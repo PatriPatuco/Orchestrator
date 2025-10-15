@@ -76,19 +76,17 @@
     }
 
     .checked-box {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-right: 0.5rem;
-    border-radius: 0.2rem;
-    border: 1px solid $greyish-blue;
-    cursor: pointer;
-    display: inline;
-    font-size: 1.4rem;
-    color: $white;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin: 0 0.5rem;
+      border-radius: 0.2rem;
+      border: 1px solid $greyish-blue;
+      cursor: pointer;
+      display: inline;
+      font-size: 1.4rem;
+      color: $white;
+    }
   }
-  }
-
-  
 
   &__button {
     width: 100%;

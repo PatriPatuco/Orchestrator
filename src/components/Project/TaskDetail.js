@@ -1,5 +1,12 @@
-const TaskDetail = ({ showTaskInfo, task }) => {
-  console.log(task);
+import { useState } from "react";
+import AddTask from "./AddTask";
+
+const TaskDetail = ({ showTaskInfo, task, project }) => {
+  const [isEditing, setIsEditing] = useState(false)
+
+  const handleEditClick = () => {
+    setIsEditing(true)
+  }
 
   return (
     <section className="taskDetail">
@@ -23,57 +30,23 @@ const TaskDetail = ({ showTaskInfo, task }) => {
         ))}
         <h4 className="taskDetail__info--title">Status</h4>
         <select className="taskDetail__status">
-          <option>Todo</option>
-          <option>Doing</option>
-          <option>Done</option>
+          {project.status.map((status, index) => (
+            <option key={index}>{status.name}</option>
+          ))}
         </select>
 
         <h4 className="taskDetail__info--title">Due Date</h4>
         <input type="datetime-local" className="taskDetail__date"></input>
-        <button className="taskDetail__button">
+        <button className="taskDetail__button" onClick={handleEditClick}>
           <span class="material-symbols-outlined taskDetail__button--i">
             edit
           </span>
           Edit
         </button>
       </div>
+
+      {isEditing && <AddTask showTaskInfo={showTaskInfo} />}
     </section>
   );
 };
-
-// HTML PARA ADD TASK
-{
-  /* <section className="taskDetail">
-  <div className="taskDetail__content">
-    <h3 className="taskDetail__title"></h3>
-    <label htmlFor="title">
-      <legend>{task.title}</legend>
-      <input
-        type="text"
-        name="title"
-        id="title"
-        placeholder={"e.g. Check mail Inbox"}
-      />
-
-      <legend>Description</legend>
-      <textarea
-        type="text"
-        name="title"
-        rows="6"
-        placeholder="e.g. Look if you received any feedback from the brieffing sent
- to the client last Monday. "
-      />
-
-      <legend>Subtasks</legend>
-      <input
-        type="text"
-        name="title"
-        id="title"
-        placeholder="e.g. Clean spam mails"
-      />
-    </label>
-  </div>
-</section>; */
-}
-
 export default TaskDetail;

@@ -11,19 +11,23 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 2,
             "title": "Task 2",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       },
@@ -35,34 +39,42 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lavar los platos"
-            },
-          {"id": 2,
-              "def": "Planchar la ropa"},
-            {
-              "id": 3,
-              "def": "Quitar el polvo"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lavar los platos"
+              },
+              { 
+                "id": 2, 
+                "def": "Planchar la ropa" 
+              },
+              {
+                "id": 3,
+                "def": "Quitar el polvo"
+              }
+            ]
           },
           {
             "id": 2,
             "title": "Task 2",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 3,
             "title": "Task 3",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       },
@@ -74,17 +86,19 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       }
     ]
   },
   {
-     "id": 2,
+    "id": 2,
     "title": "Project 02",
     "status": [
       {
@@ -95,13 +109,15 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
-            }
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
+          }
         ]
-      }, 
+      },
       {
         "id": 2,
         "name": "DOING",
@@ -110,28 +126,34 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 2,
             "title": "Task 2",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 3,
             "title": "Task 3",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       },
@@ -143,26 +165,30 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 2,
             "title": "Task 2",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       }
     ]
   },
   {
-     "id": 3,
+    "id": 3,
     "title": "Project 03",
     "status": [
       {
@@ -173,28 +199,34 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 2,
             "title": "Task 2",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           },
           {
             "id": 3,
             "title": "Task 3",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       },
@@ -206,10 +238,12 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       },
@@ -221,10 +255,12 @@
             "id": 1,
             "title": "Task 1",
             "desc": "Lorem Ipsum",
-            "subtask": [{
-              "id": 1,
-              "def": "Lorem Ipsum"
-            }]
+            "subtask": [
+              {
+                "id": 1,
+                "def": "Lorem Ipsum"
+              }
+            ]
           }
         ]
       }

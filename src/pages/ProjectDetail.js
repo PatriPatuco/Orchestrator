@@ -36,7 +36,7 @@ const ProjectDetail = ({ projects, viewProject }) => {
     const renderTaskDetail = () => {
       if (modalOn === true) {
         return (
-          <TaskDetail showTaskInfo={showTaskInfo} task={taskInfo} />
+          <TaskDetail showTaskInfo={showTaskInfo} task={taskInfo} project={projectFound} />
         );
       }
     };

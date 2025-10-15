@@ -8,13 +8,15 @@ const TaskStatus = (props) => {
   }
 
   return (
-    <div className="project__status--column">
-      <input
-        type="text"
-        className="project__status--title"
-        placeholder={props.item.name || ""}
-      ></input>
-      <span className="project__status--span">{`(${props.item.tasks.length})`}</span>
+    <section className="project__status--column">
+      <div className="project__status--header">
+        <input
+          type="text"
+          className="project__status--title"
+          placeholder={props.item.name || ""}
+        ></input>
+        <span className="project__status--span">{`(${props.item.tasks.length})`}</span>
+      </div>
       {props.item.tasks.map((taskItem, index) => (
         <BoardTask
           key={index}
@@ -23,7 +25,7 @@ const TaskStatus = (props) => {
           showTaskInfo={props.showTaskInfo}
         />
       ))}
-    </div>
+    </section>
   );
 };
 
