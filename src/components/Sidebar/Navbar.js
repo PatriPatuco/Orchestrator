@@ -23,16 +23,20 @@ const Navbar = ({ projects, setRetracted, retracted }) => {
   return (
     <>
       <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+        <span>
+          <Link to="/">
+            <StyledReactLogo />
+          </Link>
+        </span>
         <h2 className="sidebar__h2">
           <Link to="/" className="sidebar__h2--a">
-            <StyledReactLogo />
             Orchestrator
           </Link>
           <span>
             <Link
               to="#"
               className={
-                sidebar ? 'sidebar__h3--span active' : 'sidebar__h3--span'
+                sidebar ? 'sidebar__h2--span active' : 'sidebar__h2--span'
               }
             >
               <MdIcons.MdOutlineKeyboardDoubleArrowRight

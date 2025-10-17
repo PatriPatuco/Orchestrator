@@ -14,27 +14,36 @@
     transition: 350ms;
   }
   &__h2 {
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     font-size: initial;
     font-size: 3rem;
     margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+
     &--a {
       text-decoration: none;
     }
-  }
-  &__h3 {
-    font-size: 2rem;
-    list-style-type: none;
-    margin: 10px 0;
     &--span {
       font-size: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       &.active {
         display: inline-block;
         transform: rotate(180deg);
         margin: 3px 0;
       }
     }
+  }
+
+  &__h3 {
+    font-size: 2rem;
+    list-style-type: none;
+    margin: 10px 0;
   }
   &__nav {
     background-color: lightblue;
