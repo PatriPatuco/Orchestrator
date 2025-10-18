@@ -2,14 +2,21 @@
   grid-row: 1;
   grid-column: 1/1;
   height: 100vh;
+<<<<<<< HEAD
   width: 100px;
+=======
+  width: 120px;
+>>>>>>> projectSection
   background-color: lightblue;
   font-family: $regular;
   justify-content: space-between;
 
   &.active {
     width: 280px;
+<<<<<<< HEAD
     grid-column: 1/2;
+=======
+>>>>>>> projectSection
     // left: 0px;
     transition: 350ms;
   }

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import "./core/reset";
 @import "./core/variables";
 =======
@@ -8,6 +9,14 @@
 @import './components/Header.scss';
 @import './components/ListView.scss';
 @import './components/Navbar.scss';
+=======
+@import './core/_reset';
+@import './core/_variables';
+@import './components/Navbar';
+@import './components/Header';
+@import './components/BoardView';
+@import './components/TaskDetail';
+>>>>>>> projectSection
 
 input {
   border: none;
@@ -17,6 +26,7 @@ input {
 .main {
   display: grid;
   grid-template-rows: 75px auto;
+<<<<<<< HEAD
   grid-template-columns: 200px auto;
   &.retracted {
     grid-template-columns: 300px auto;
@@ -30,3 +40,11 @@ input {
   }
 }
 >>>>>>> 79650cd (added List view with no styling and fix home layout when side bar expanded)
+=======
+  grid-template-columns: 350px auto;
+  .home {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+>>>>>>> projectSection

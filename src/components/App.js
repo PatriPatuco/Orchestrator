@@ -9,18 +9,25 @@ import NewProject from './Project/NewProject';
 import ProjectDetail from '../pages/ProjectDetail';
 
 function App() {
+<<<<<<< HEAD
   // const [sidebar, setSidebar] = useState(false);
+=======
+>>>>>>> projectSection
 
   const fakedata = [];
   const [projects] = useState(taskData);
   const [viewProject, setViewProject] = useState(false);
+<<<<<<< HEAD
   const [retracted, setRetracted] = useState(false);
+=======
+>>>>>>> projectSection
 
   const showView = () => {
     setViewProject(!viewProject);
   };
 
   return (
+<<<<<<< HEAD
     <div className={retracted ? 'main retracted' : 'main'}>
       <Header projects={projects} showView={showView} />
       <Navbar
@@ -28,10 +35,16 @@ function App() {
         setRetracted={setRetracted}
         retracted={retracted}
       />
+=======
+    <div className="main">
+      <Header projects={projects} showView={showView} />
+      <Navbar projects={projects} />
+>>>>>>> projectSection
 
       <Routes>
         <Route
           path="/"
+<<<<<<< HEAD
           element={
             <Home
               projects={projects}
@@ -39,6 +52,9 @@ function App() {
               retracted={retracted}
             />
           }
+=======
+          element={<Home projects={projects} viewProject={viewProject} />}
+>>>>>>> projectSection
         ></Route>
         <Route
           path="/project/:id"

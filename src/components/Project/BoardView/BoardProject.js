@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import BoardStatus from './BoardStatus';
 import '../../../styles/components/BoardView.scss';
 
 const Project = ({ projectFound, viewProject }) => {
   console.log(projectFound);
+=======
+import BoardStatus from './BoardStatus';
+import '../../../styles/components/BoardView.scss'
+
+const BoardProject = ({ projectFound, viewProject, showTaskInfo }) => {
+>>>>>>> projectSection
   return (
     <>
       <section className="project">
@@ -19,15 +26,27 @@ const Project = ({ projectFound, viewProject }) => {
               key={index}
               item={statusItem}
               viewProject={viewProject}
+<<<<<<< HEAD
+=======
+              showTaskInfo={showTaskInfo}
+>>>>>>> projectSection
             />
           ))}
         </div>
       </section>
+<<<<<<< HEAD
+=======
+      ;
+>>>>>>> projectSection
     </>
   );
 };
 
+<<<<<<< HEAD
 export default Project;
+=======
+export default BoardProject;
+>>>>>>> projectSection
 
 /* const Project = ({ taskData }) => {
   const renderButton = () => {

@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 @import '../core/variables';
 
 .project {
   grid-row: 4;
   grid-column: 2;
+=======
+@import '../core/_variables';
+
+.project {
+>>>>>>> projectSection
   background-color: $mid-white;
   font-family: $regular;
   padding: 4rem;
