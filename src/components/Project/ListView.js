@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
 import '../../styles/components/ListView.scss';
 
 const ListView = (project) => {
@@ -61,20 +60,3 @@ export default ListView;
 //   return eachstatus.tasks.map((eachtask) => eachtask.title);
 // });
 // console.log(taskTitle);
-=======
-
-const ListView = (props) => {
-  console.log(props.projectFound);
-  return (
-    <>
-      <div className="project__status">
-        {props.projectFound.tasks.map((task, index) => (
-          <p>{task.title}</p>
-        ))}
-      </div>
-    </>
-  );
-};
-
-export default ListView;
->>>>>>> projectSection

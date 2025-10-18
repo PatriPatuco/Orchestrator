@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import * as MdIcons from 'react-icons/md';
-import { ReactComponent as ReactLogo } from '../../images/logo.svg';
-import styled from 'styled-components';
-import ProjectDetail from '../../pages/ProjectDetail';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import * as MdIcons from "react-icons/md";
+import { ReactComponent as ReactLogo } from "../../images/logo.svg";
+import styled from "styled-components";
+import ProjectDetail from "../../pages/ProjectDetail";
 
-<<<<<<< HEAD
 const Navbar = ({ projects, setRetracted, retracted }) => {
   console.log(projects);
   const [sidebar, setSidebar] = useState(false);
@@ -15,12 +14,6 @@ const Navbar = ({ projects, setRetracted, retracted }) => {
     setRetracted(!retracted);
   };
 
-=======
-const Navbar = ({ projects }) => {
-  const [sidebar, setSidebar] = useState(false);
-  const [taskList, setTaskList] = useState(true);
-  const showSideBar = () => setSidebar(!sidebar);
->>>>>>> projectSection
   const showTaskList = () => setTaskList(!taskList);
 
   const StyledReactLogo = styled(ReactLogo)`
@@ -29,17 +22,21 @@ const Navbar = ({ projects }) => {
   `;
   return (
     <>
-      <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+      <div className={sidebar ? "sidebar active" : "sidebar"}>
+        <span>
+          <Link to="/">
+            <StyledReactLogo />
+          </Link>
+        </span>
         <h2 className="sidebar__h2">
           <Link to="/" className="sidebar__h2--a">
-            <StyledReactLogo />
             Orchestrator
           </Link>
           <span>
             <Link
               to="#"
               className={
-                sidebar ? 'sidebar__h3--span active' : 'sidebar__h3--span'
+                sidebar ? "sidebar__h2--span active" : "sidebar__h2--span"
               }
             >
               <MdIcons.MdOutlineKeyboardDoubleArrowRight
@@ -49,7 +46,7 @@ const Navbar = ({ projects }) => {
           </span>
         </h2>
         <h3 className="sidebar__h3">
-          List of Tasks {projects.length > 0 ? '(' + projects.length + ')' : ''}
+          List of Tasks {projects.length > 0 ? "(" + projects.length + ")" : ""}
         </h3>
         <nav className="sidebar__nav">
           <ul className="sidebar__nav--ulp">
